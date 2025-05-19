@@ -105,7 +105,7 @@ def keonn_ws_change_ip(old_ip, new_ip, port=11987, hostname="",mac_address=""):
     
     print(f"Changing IP address.........................................", end="")
     # TODO: Add the IP change command here
-    network = ipaddress.ip_network("192.168.6.0/24", strict=False)
+    network = ipaddress.ip_network(TARGET_SUBNET, strict=False)
     subnet_mask = str(network.netmask)
     prefix_length = str(network.prefixlen)
     change_ip_command = {"type":"REST","url":"/devices/"+ hostname +"/networkDevice/network","method":"PUT","id":2,"data":"<request>\n                        <ip>"+new_ip+"</ip>\n                        <dns>8.8.8.8,8.8.4.4</dns>\n                        <mode>STATIC</mode>\n                        <subnet>"+ subnet_mask +"</subnet>\n                        <subnet-prefix>"+prefix_length+"</subnet-prefix>\n                        <gateway>"+GATEWAY+"</gateway>\n                        <mac>"+mac_address+"</mac>\n                        <ntp>0.europe.pool.ntp.org,1.europe.pool.ntp.org,0.north-america.pool.ntp.org,1.north-america.pool.ntp.org,0.south-america.pool.ntp.org,1.south-america.pool.ntp.org,0.africa.pool.ntp.org,1.africa.pool.ntp.org,0.asia.pool.ntp.org,1.asia.pool.ntp.org,0.oceania.pool.ntp.org,1.oceania.pool.ntp.org</ntp>\n                    </request>"}
