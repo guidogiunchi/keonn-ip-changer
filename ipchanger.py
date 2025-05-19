@@ -27,9 +27,9 @@ def load_csv(file_path):
         reader = csv.DictReader(csvfile)
         for row in reader:
             device = {
-                "MAC_ADDRESS": row["MAC ADDRESS"],
-                "IP": row["IP STOCCOLMA"],
-                "Hostname": row["Modello"]
+                "MAC_ADDRESS": row["MACADDRESS"],
+                "IP": row["IP"],
+                "Hostname": row["HOSTNAME"]
             }
             devices.append(device)
     return devices
