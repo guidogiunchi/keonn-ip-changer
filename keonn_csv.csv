@@ -1,0 +1,3 @@
+MACADDRESS,IP,OLDIP,vitn,vitsize,Switch,Porta,cable,HOSTNAME,checked,Note,zone
+e4:15:f6:f4:00:11,192.168.1.218,192.168.1.118,331,F,,01,V-01,AdvanReader-m1-70-0011,SI,,
+00:35:ff:8e:aa:bb,192.168.1.227,192.168.1.77,123,R,,07,V-07,AdvanReader-m2-70-aabb,SI,,
